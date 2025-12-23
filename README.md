@@ -131,7 +131,12 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 
 Сервисные зоны  
-![alt text](screnshot/1.10.png)
+![alt text](screnshot/1.10.png)  
+
+
+Таргет группа  
+![alt text](screnshot/Target group.png)
+
 
 
 
