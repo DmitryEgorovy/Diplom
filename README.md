@@ -118,3 +118,20 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 ![alt text](screnshot/1.4.png)  
 ![alt text](screnshot/1.5.png)  
 
+---  
+Облачные сети  
+![alt text](screnshot/1.7.png)  
+
+Балансировщик  
+![alt text](screnshot/1.8.png)  
+
+
+Сервсиные аккаунты (на всякий случай)    
+![alt text](screnshot/1.9.png)
+
+
+Сервисные зоны  
+![alt text](screnshot/1.10.png)
+
+
+
