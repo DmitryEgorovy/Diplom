@@ -113,4 +113,8 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 Скриншоты и текст по диплому.
 ---
 Развёртка Terraform  
-![alt text](screnshot/1.1.png)
+![alt text](screnshot/1.1.png)  
+![alt text](screnshot/1.3.png)  
+![alt text](screnshot/1.4.png)  
+![alt text](screnshot/1.5.png)  
+
