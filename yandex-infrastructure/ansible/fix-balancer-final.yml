@@ -1,0 +1,41 @@
+---
+- name: Fix Load Balancer Final
+  hosts: web1.ru-central1.internal
+  become: yes
+
+  tasks:
+    - name: Configure nginx without self-loop
+      copy:
+        content: |
+          upstream backend {
+            server 192.168.30.25:80;  # только web2
+          }
+
+          server {
+            listen 80;
+            server_name _;
+            
+            # Прямой доступ к web1
+            location /web1 {
+              proxy_pass http://192.168.20.13:80/;
+              proxy_set_header Host $host;
+              proxy_set_header X-Real-IP $remote_addr;
+              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            }
+
+            # Балансировка на web2
+            location / {
+              proxy_pass http://backend;
+              proxy_set_header Host $host;
+              proxy_set_header X-Real-IP $remote_addr;
+              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            }
+          }
+        dest: /etc/nginx/sites-available/loadbalancer
+      notify: restart nginx
+
+  handlers:
+    - name: restart nginx
+      systemd:
+        name: nginx
+        state: restarted

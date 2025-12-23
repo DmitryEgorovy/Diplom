@@ -1,0 +1,73 @@
+# Zabbix Server Configuration File
+
+### General Parameters ###
+ListenPort={{ zabbix_server.listen_port }}
+ListenIP=0.0.0.0
+SourceIP=
+
+LogType=file
+LogFile=/var/log/zabbix/zabbix_server.log
+LogFileSize=100
+DebugLevel=3
+
+PidFile=/var/run/zabbix/zabbix_server.pid
+SocketDir=/var/run/zabbix
+
+### Database Configuration ###
+DBHost={{ zabbix_server.db_host }}
+DBName={{ zabbix_server.db_name }}
+DBUser={{ zabbix_server.db_user }}
+DBPassword={{ zabbix_server.db_password }}
+
+DBPort=5432
+DBSocket=
+
+### Advanced Database Parameters ###
+HistoryStorageURL=
+HistoryStorageTypes=uint,dbl,str,log,text
+HistoryStorageDateIndex=0
+
+### Security Parameters ###
+SSLCertLocation=${datadir}/zabbix/ssl/certs
+SSLKeyLocation=${datadir}/zabbix/ssl/keys
+SSLCALocation=
+
+### Other Parameters ###
+SNMPTrapperFile=/var/log/snmp_trap/snmptrap.log
+Timeout=4
+TrapperTimeout=300
+UnavailableDelay=60
+UnreachableDelay=15
+UnreachablePeriod=45
+
+AlertScriptsPath=/usr/lib/zabbix/alertscripts
+ExternalScripts=/usr/lib/zabbix/externalscripts
+
+FpingLocation=/usr/bin/fping
+Fping6Location=/usr/bin/fping6
+
+LogSlowQueries=3000
+
+StartPingers=5
+StartPollers=5
+StartPollersUnreachable=5
+StartTrappers=5
+StartDiscoverers=1
+
+### Housekeeping ###
+HousekeepingFrequency=1
+MaxHousekeeperDelete=50000
+
+### Cache Sizes ###
+CacheSize=128M
+HistoryCacheSize=64M
+HistoryIndexCacheSize=32M
+TrendCacheSize=32M
+ValueCacheSize=128M
+
+### Timeouts ###
+Timeout=3
+TrapperTimeout=300
+UnreachablePeriod=45
+UnavailableDelay=60
+UnreachableDelay=15

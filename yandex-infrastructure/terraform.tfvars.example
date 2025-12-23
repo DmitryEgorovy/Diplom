@@ -1,0 +1,8 @@
+# Скопируйте этот файл как terraform.tfvars и заполните своими значениями
+yc_token     = "y0__xDdvoH1BRjB3RMgzKvClhSm6TmLD0Cu9NW88G5ScaCBJ0lp3A"
+yc_cloud_id  = "b1gprp34kn0cm7irbme3"
+yc_folder_id = "b1g9cbs1t90uq9tgn39b"
+
+# Опционально - если SSH ключи лежат не в стандартном месте
+# ssh_public_key_path  = "~/.ssh/id_rsa.pub"
+# ssh_private_key_path = "~/.ssh/id_rsa"

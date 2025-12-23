@@ -1,0 +1,96 @@
+---
+- name: Install Zabbix on Web1
+  hosts: web1.ru-central1.internal
+  become: yes
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Install Zabbix packages
+      apt:
+        name:
+          - zabbix-server-pgsql
+          - zabbix-frontend-php
+          - zabbix-agent
+          - php-pgsql
+          - php-bcmath
+          - php-mbstring
+          - php-gd
+          - php-xml
+        state: present
+
+    - name: Create Zabbix database and user
+      shell: |
+        sudo -u postgres createdb -O postgres zabbix
+        sudo -u postgres psql -c "CREATE USER zabbix WITH PASSWORD 'zabbix';"
+        sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE zabbix TO zabbix;"
+      args:
+        executable: /bin/bash
+
+    - name: Import Zabbix schema
+      shell: |
+        zcat /usr/share/doc/zabbix-server-pgsql*/create.sql.gz | sudo -u zabbix psql zabbix
+      args:
+        executable: /bin/bash
+
+    - name: Configure Zabbix server
+      copy:
+        content: |
+          DBHost=localhost
+          DBName=zabbix
+          DBUser=zabbix
+          DBPassword=zabbix
+        dest: /etc/zabbix/zabbix_server.conf
+
+    - name: Configure PHP settings for Zabbix
+      shell: |
+        sudo sed -i 's/^;date.timezone =/date.timezone = Europe\/Moscow/' /etc/php/7.2/apache2/php.ini
+        sudo sed -i 's/^post_max_size = .*/post_max_size = 16M/' /etc/php/7.2/apache2/php.ini
+        sudo sed -i 's/^upload_max_filesize = .*/upload_max_filesize = 2M/' /etc/php/7.2/apache2/php.ini
+        sudo sed -i 's/^max_execution_time = .*/max_execution_time = 300/' /etc/php/7.2/apache2/php.ini
+        sudo sed -i 's/^max_input_time = .*/max_input_time = 300/' /etc/php/7.2/apache2/php.ini
+        sudo sed -i 's/^memory_limit = .*/memory_limit = 128M/' /etc/php/7.2/apache2/php.ini
+      args:
+        executable: /bin/bash
+
+    - name: Copy Zabbix frontend to web directory
+      shell: |
+        sudo cp -r /usr/share/zabbix/* /var/www/html/
+        sudo chown -R www-data:www-data /var/www/html/
+      args:
+        executable: /bin/bash
+
+    - name: Start Zabbix services
+      systemd:
+        name: "{{ item }}"
+        state: restarted
+        enabled: yes
+      loop:
+        - zabbix-server
+        - zabbix-agent
+        - apache2
+
+    - name: Wait for services to start
+      pause:
+        seconds: 10
+
+    - name: Check Zabbix installation
+      shell: |
+        echo "Zabbix Server status:"
+        sudo systemctl is-active zabbix-server
+        echo "Zabbix Agent status:"
+        sudo systemctl is-active zabbix-agent
+        echo "Apache status:"
+        sudo systemctl is-active apache2
+        echo "Zabbix web check:"
+        curl -s -o /dev/null -w "%{http_code}" http://localhost/zabbix/
+      args:
+        executable: /bin/bash
+      register: zabbix_check
+
+    - name: Show Zabbix status
+      debug:
+        msg: "{{ zabbix_check.stdout }}"

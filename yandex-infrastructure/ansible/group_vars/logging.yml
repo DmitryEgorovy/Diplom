@@ -1,0 +1,14 @@
+---
+# Настройки Elasticsearch
+elasticsearch:
+  cluster_name: "logging-cluster"
+  node_name: "{{ inventory_hostname }}"
+  network_host: "0.0.0.0"
+  http_port: 9200
+  discovery_type: single-node
+
+# Настройки Kibana
+kibana:
+  server_port: 5601
+  server_host: "0.0.0.0"
+  elasticsearch_hosts: ["http://192.168.20.11:9200"]

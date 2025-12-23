@@ -1,0 +1,19 @@
+---
+# Общие настройки
+ansible_user: ubuntu
+ansible_python_interpreter: /usr/bin/python3
+
+# Настройки времени
+timezone: Europe/Moscow
+
+# Версии ПО
+software_versions:
+  nginx: stable
+  zabbix: "6.0"
+  elasticsearch: "7.x"
+  kibana: "7.x"
+
+# Статические IP адреса
+internal_ips:
+  zabbix_server: "158.160.34.71"
+  elasticsearch: "192.168.20.14"

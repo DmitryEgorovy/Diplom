@@ -1,0 +1,41 @@
+---
+- name: Fix Load Balancer Configuration
+  hosts: web1.ru-central1.internal
+  become: yes
+
+  tasks:
+    - name: Configure nginx with health checks
+      copy:
+        content: |
+          upstream backend {
+            server 192.168.20.13:80 max_fails=3 fail_timeout=30s;
+            server 192.168.30.25:80 max_fails=3 fail_timeout=30s;
+            least_conn;
+          }
+
+          server {
+            listen 80;
+            server_name _;
+            
+            location / {
+              proxy_pass http://backend;
+              proxy_set_header Host $host;
+              proxy_set_header X-Real-IP $remote_addr;
+              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+              proxy_set_header X-Forwarded-Proto $scheme;
+            }
+
+            location /nginx_status {
+              stub_status;
+              allow 127.0.0.1;
+              deny all;
+            }
+          }
+        dest: /etc/nginx/sites-available/loadbalancer
+      notify: restart nginx
+
+  handlers:
+    - name: restart nginx
+      systemd:
+        name: nginx
+        state: restarted
