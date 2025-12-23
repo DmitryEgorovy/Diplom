@@ -135,7 +135,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 
 Таргет группа  
-![alt text]([screnshot/Target group.png](https://github.com/DmitryEgorovy/Diplom/blob/63f4a6ebd8c60135ed1b9387bb2fc6721ba75627/screnshot/Target%20group.png))
+![alt text]([screnshot/Target group.png](https://github.com/DmitryEgorovy/Diplom/blob/63f4a6ebd8c60135ed1b9387bb2fc6721ba75627/screnshot/Target%20group.png)
 
 
 
