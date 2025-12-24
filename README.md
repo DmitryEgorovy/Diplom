@@ -180,7 +180,8 @@ Zabbix
 Установленный Elasticksearch и Логи Кибана  
 
 ![alt text](https://github.com/DmitryEgorovy/Diplom/blob/a1c7ff4bf329ee720e94d41fa6b49e43a457604f/screnshot/%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20elastic.png)  
-![alt text]([screnshot/zabbix.png](https://github.com/DmitryEgorovy/Diplom/blob/a1c7ff4bf329ee720e94d41fa6b49e43a457604f/screnshot/%D0%9B%D0%BE%D0%B3%D0%B8%20%D0%9A%D0%B8%D0%B1%D0%B0%D0%BD%D0%B0.png))
+
+![alt text](https://github.com/DmitryEgorovy/Diplom/blob/a1c7ff4bf329ee720e94d41fa6b49e43a457604f/screnshot/%D0%9B%D0%BE%D0%B3%D0%B8%20%D0%9A%D0%B8%D0%B1%D0%B0%D0%BD%D0%B0.png)
 
 
  
