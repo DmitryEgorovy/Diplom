@@ -138,7 +138,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 ![alt text](https://github.com/DmitryEgorovy/Diplom/blob/63f4a6ebd8c60135ed1b9387bb2fc6721ba75627/screnshot/Target%20group.png)  
 
 Группы Безопасности  
-![alt text]([https://github.com/DmitryEgorovy/Diplom/blob/63f4a6ebd8c60135ed1b9387bb2fc6721ba75627/screnshot/Target%20group.png](https://github.com/DmitryEgorovy/Diplom/blob/d16b00a2ac9ddaec8662d3cb29e305f387f921ce/screnshot/%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%8B%20%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D0%B8.png))
+![alt text](https://github.com/DmitryEgorovy/Diplom/blob/d16b00a2ac9ddaec8662d3cb29e305f387f921ce/screnshot/%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%8B%20%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D0%B8.png)
 
 
 
