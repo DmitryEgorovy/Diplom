@@ -156,5 +156,19 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 ![alt text](https://github.com/DmitryEgorovy/Diplom/blob/1fa28d6dff679681403853d9908c7173e042cb0a/screnshot/%D1%81%D0%BD%D0%B8%D0%BC%D0%BA%D0%B8%20%D0%B4%D0%B8%D1%81%D0%BA%D0%BE%D0%B21.png)
 
+---
+Работа балансировщица  
+![alt text](https://github.com/DmitryEgorovy/Diplom/blob/155c660000cda6a33bf3b82a8997ff9a984a8193/screnshot/%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D0%B1%D0%B0%D0%BB%D0%B0%D0%BD%D1%81%D0%B8%D1%80%D0%BE%D0%B2%D1%89%D0%B8%D0%BA%D0%B0.png)  
+
+Проверка балансировщица  
+![alt text](https://github.com/DmitryEgorovy/Diplom/blob/155c660000cda6a33bf3b82a8997ff9a984a8193/screnshot/%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%B1%D0%B0%D0%BB%D0%B0%D0%BD%D1%81%D0%B8%D1%80%D0%BE%D0%B2%D1%89%D0%B8%D0%BA%D0%B0.png)  
+
+---
+Логи filebeat
+
+![alt text](https://github.com/DmitryEgorovy/Diplom/blob/155c660000cda6a33bf3b82a8997ff9a984a8193/screnshot/%D0%BB%D0%BE%D0%B3%D0%B8%20filebeat.png)  
+![alt text](https://github.com/DmitryEgorovy/Diplom/blob/155c660000cda6a33bf3b82a8997ff9a984a8193/screnshot/%D0%BB%D0%BE%D0%B3%D0%B8%20filebeat1.png)  
+
+
  
 
