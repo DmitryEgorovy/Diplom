@@ -149,4 +149,12 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 ![alt text](screnshot/web2.png)
 
+---
+Снимки дисков 
+
+![alt text](https://github.com/DmitryEgorovy/Diplom/blob/1fa28d6dff679681403853d9908c7173e042cb0a/screnshot/%D1%81%D0%BD%D0%B8%D0%BC%D0%BA%D0%B8%20%D0%B4%D0%B8%D1%81%D0%BA%D0%BE%D0%B2.png)  
+
+![alt text](https://github.com/DmitryEgorovy/Diplom/blob/1fa28d6dff679681403853d9908c7173e042cb0a/screnshot/%D1%81%D0%BD%D0%B8%D0%BC%D0%BA%D0%B8%20%D0%B4%D0%B8%D1%81%D0%BA%D0%BE%D0%B21.png)
+
+ 
 
